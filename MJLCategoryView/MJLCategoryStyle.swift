@@ -25,7 +25,7 @@ struct MJLCategoryStyle {
     
     var titleFont: UIFont = UIFont.systemFont(ofSize: 16.0)
     
-    var selectedTitleFont: UIFont = UIFont.boldSystemFont(ofSize: 20.0)
+    var selectedTitleFont: UIFont = UIFont.boldSystemFont(ofSize: 16.0)
     
     var titleNumberOfLine: Int = 0
     

@@ -14,11 +14,11 @@ class ViewController: UIViewController {
         didSet {
             var style = MJLCategoryStyle()
             style.titleNumberOfLine = 2
-            style.widthType = .deviceWidth
+            style.widthType = .contentWidth
             
             categoryView.categoryStyle = style
-            categoryView.categoryTitles = ["First", "Second", "Third"]
-            categoryView.defaultSelectedButtonIndex = 0
+            categoryView.categoryTitles = ["First", "Second", "Third", "First", "Second", "Third", "First", "Second", "Third"]
+            categoryView.defaultSelectedButtonIndex = 5
             categoryView.delegate = self
         }
     }
