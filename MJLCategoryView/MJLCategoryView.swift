@@ -7,29 +7,29 @@
 
 import UIKit
 
-protocol MJLCategoryViewDelegate: NSObjectProtocol {
+public protocol MJLCategoryViewDelegate: NSObjectProtocol {
     func showCurrentCategoryWith(_ index: Int)
 }
 
-class MJLCategoryView: UIView {
-
+public class MJLCategoryView: UIView {
+    
     private var categoryScrollView = UIScrollView()
     private var categoryHintBar = UIView()
     private var currentSelectedButton: UIButton?
     private var categoryButtons = [UIButton]()
     
     // Parameters
-    weak var delegate: MJLCategoryViewDelegate?
-    var categoryTitles = [String]()
-    var categoryStyle = MJLCategoryStyle()
-    var defaultSelectedButtonIndex = 0
-    var currentSelectedButtonIndex = 0
+    public weak var delegate: MJLCategoryViewDelegate?
+    public var categoryTitles = [String]()
+    public var categoryStyle = MJLCategoryStyle()
+    public var defaultSelectedButtonIndex = 0
+    public var currentSelectedButtonIndex = 0
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         setMJLCategoryView()
     }
     
-    func redraw() {
+    public func redraw() {
         for view in categoryScrollView.subviews {
             view.removeFromSuperview()
         }
@@ -37,7 +37,7 @@ class MJLCategoryView: UIView {
         setMJLCategoryView()
     }
     
-    func selectCategoryAt(index: Int) {
+    public func selectCategoryAt(index: Int) {
         guard index < categoryTitles.count, index >= 0 else {return}
         moveCategoryHintBarWith(categoryButtons[index])
     }
