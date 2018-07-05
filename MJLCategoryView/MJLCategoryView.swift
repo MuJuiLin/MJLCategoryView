@@ -30,14 +30,10 @@ class MJLCategoryView: UIView {
         // Drawing code
         setMJLCategoryView()
     }
-    
-    // MARK: - IBAction
-    @objc func switchCategory(_ sender: UIButton) {
-        moveCategoryHintBarWith(sender)
-        delegate?.showCurrentCategoryWith(sender.tag)
-    }
-    
-    // MARK: - Animation
+}
+
+// MARK: - Animation
+extension MJLCategoryView {
     private func moveCategoryHintBarWith(_ button: UIButton) {
         
         changeCurrentSelectedButtonWith(button: button)
@@ -70,6 +66,14 @@ class MJLCategoryView: UIView {
         currentSelectedButton = button
         currentSelectedButton?.isSelected = true
         currentSelectedButton?.titleLabel?.font = categoryStyle.selectedTitleFont
+    }
+}
+
+// MARK: - IBAction
+extension MJLCategoryView {
+    @objc func switchCategory(_ sender: UIButton) {
+        moveCategoryHintBarWith(sender)
+        delegate?.showCurrentCategoryWith(sender.tag)
     }
 }
 
