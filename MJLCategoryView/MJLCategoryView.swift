@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MJLCategoryViewDelegate {
+protocol MJLCategoryViewDelegate: NSObjectProtocol {
     func showCurrentCategoryWith(_ index: Int)
 }
 
@@ -20,7 +20,7 @@ class MJLCategoryView: UIView {
     private var categoryButtons = [UIButton]()
     
     // Parameters
-    var delegate: MJLCategoryViewDelegate?
+    weak var delegate: MJLCategoryViewDelegate?
     var categoryTitles = [String]()
     var categoryStyle = MJLCategoryStyle()
     var defaultSelectedButtonIndex = 0
