@@ -2,7 +2,9 @@
 The implementation of android tab bar unit in Swift. 
 
 ## Installation
-
+```sh
+pod 'MJLCategoryView'
+```
 ## Usage
 
 ### Example
