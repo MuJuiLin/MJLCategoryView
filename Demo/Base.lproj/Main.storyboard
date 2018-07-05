@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,12 +26,40 @@
                                     <constraint firstAttribute="height" constant="80" id="ekW-93-2Gb"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThX-bu-7X9">
+                                <rect key="frame" x="187.5" y="175" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ThX-bu-7X9" secondAttribute="height" multiplier="1:1" id="gGN-Z1-LuW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="goRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H8A-Zb-1AK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxw-GR-Cj2">
+                                <rect key="frame" x="0.0" y="175" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nxw-GR-Cj2" secondAttribute="height" multiplier="1:1" id="xvP-of-Fag"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="goLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWU-tf-NAK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pxC-uw-Ld5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MEc-uk-Q0D"/>
+                            <constraint firstItem="nxw-GR-Cj2" firstAttribute="top" secondItem="pxC-uw-Ld5" secondAttribute="bottom" constant="75" id="Nq4-If-9zu"/>
                             <constraint firstItem="pxC-uw-Ld5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UOI-FT-3uz"/>
+                            <constraint firstItem="ThX-bu-7X9" firstAttribute="top" secondItem="pxC-uw-Ld5" secondAttribute="bottom" constant="75" id="b9S-TW-PJp"/>
                             <constraint firstItem="pxC-uw-Ld5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cBz-ML-9PN"/>
+                            <constraint firstItem="nxw-GR-Cj2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ejF-Gw-tqJ"/>
+                            <constraint firstItem="ThX-bu-7X9" firstAttribute="leading" secondItem="nxw-GR-Cj2" secondAttribute="trailing" id="ew8-OM-CYM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ThX-bu-7X9" secondAttribute="trailing" id="k9U-VL-tFA"/>
+                            <constraint firstItem="ThX-bu-7X9" firstAttribute="width" secondItem="nxw-GR-Cj2" secondAttribute="width" id="uQU-Jx-1Vj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

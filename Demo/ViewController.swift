@@ -10,6 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var currentIndex = 0
+    var titles = ["First", "Second", "Third", "First", "Second", "Third", "First", "Second", "Third"]
+    
+    @IBAction func goLeft(_ sender: Any) {
+        currentIndex-=1
+        if currentIndex < 0 {
+            currentIndex+=1
+        }
+        categoryView.selectCategoryAt(index: currentIndex)
+    }
+    
+    @IBAction func goRight(_ sender: Any) {
+        currentIndex+=1
+        if currentIndex > titles.count {
+            currentIndex-=1
+        }
+        categoryView.selectCategoryAt(index: currentIndex)
+    }
+    
     @IBOutlet weak var categoryView: MJLCategoryView! {
         didSet {
             var style = MJLCategoryStyle()
@@ -17,8 +36,8 @@ class ViewController: UIViewController {
             style.widthType = .contentWidth
             
             categoryView.categoryStyle = style
-            categoryView.categoryTitles = ["First", "Second", "Third", "First", "Second", "Third", "First", "Second", "Third"]
-            categoryView.defaultSelectedButtonIndex = 5
+            categoryView.categoryTitles = titles
+            categoryView.defaultSelectedButtonIndex = currentIndex
             categoryView.delegate = self
         }
     }
@@ -36,7 +55,7 @@ class ViewController: UIViewController {
 
 extension ViewController: MJLCategoryViewDelegate {
     func showCurrentCategoryWith(_ index: Int) {
-        print(index)
+        currentIndex = index
     }
 }
 

@@ -31,7 +31,9 @@ struct MJLCategoryStyle {
     
     var categoryMinimumWidth: CGFloat = 0 /* Only works when the type is contentWidth */
     
-    var moveDuration: TimeInterval = 0.2
+    var hintBarMoveDuration: TimeInterval = 0.2
+    
+    var scrollViewAnimationEnable: Bool = true
     
     var widthType: MJLCategoryViewWidthType = MJLCategoryViewWidthType.deviceWidth
 }

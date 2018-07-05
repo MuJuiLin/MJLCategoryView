@@ -27,8 +27,26 @@ class MJLCategoryView: UIView {
     var currentSelectedButtonIndex = 0
     
     override func draw(_ rect: CGRect) {
-        // Drawing code
         setMJLCategoryView()
+    }
+    
+    func redraw() {
+        for view in categoryScrollView.subviews {
+            view.removeFromSuperview()
+        }
+        categoryButtons.removeAll()
+        setMJLCategoryView()
+    }
+    
+    func selectCategoryAt(index: Int) {
+        guard index < categoryTitles.count, index >= 0 else {return}
+        moveCategoryHintBarWith(categoryButtons[index])
+    }
+    
+    // MARK: - IBAction
+    @objc private func switchCategory(_ sender: UIButton) {
+        moveCategoryHintBarWith(sender)
+        delegate?.showCurrentCategoryWith(sender.tag)
     }
 }
 
@@ -38,7 +56,7 @@ extension MJLCategoryView {
         
         changeCurrentSelectedButtonWith(button: button)
         
-        UIView.animate(withDuration: categoryStyle.moveDuration) {
+        UIView.animate(withDuration: categoryStyle.hintBarMoveDuration) {
             self.categoryHintBar.frame = CGRect(x: button.frame.origin.x, y: self.categoryHintBar.frame.origin.y, width: button.frame.width, height: self.categoryHintBar.frame.height)
         }
         
@@ -55,7 +73,7 @@ extension MJLCategoryView {
             else {
                 targetOffset = CGPoint(x: categoryScrollView.contentSize.width * 0.5 - categoryScrollView.frame.width * 0.5, y: 0)
             }
-            categoryScrollView.setContentOffset(targetOffset, animated: true)
+            categoryScrollView.setContentOffset(targetOffset, animated: categoryStyle.scrollViewAnimationEnable)
         }
     }
     
@@ -66,14 +84,6 @@ extension MJLCategoryView {
         currentSelectedButton = button
         currentSelectedButton?.isSelected = true
         currentSelectedButton?.titleLabel?.font = categoryStyle.selectedTitleFont
-    }
-}
-
-// MARK: - IBAction
-extension MJLCategoryView {
-    @objc func switchCategory(_ sender: UIButton) {
-        moveCategoryHintBarWith(sender)
-        delegate?.showCurrentCategoryWith(sender.tag)
     }
 }
 
