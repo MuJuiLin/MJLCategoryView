@@ -26,4 +26,4 @@ You can use storyboad to create this view easily.
 
 ## Screencasts
 
-![loading](https://github.com/MuJuiLin/MJLCategoryView/blob/master/screencasts/MJLCategoryView.gif)
+![loading](https://github.com/MuJuiLin/MJLCategoryView/blob/master/Screencasts/MJLCategoryView.gif)
