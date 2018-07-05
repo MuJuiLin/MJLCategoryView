@@ -1,9 +1,8 @@
 //
-//  TNCategoryView.swift
-//  isuntvmall
+//  MJLCategoryView.swift
+//  MJLCategoryView
 //
-//  Created by Mujui Lin on 2018/3/13.
-//  Copyright © 2018年 Tidenet. All rights reserved.
+//  Created by Mujui Lin on 04/07/2018.
 //
 
 import UIKit

@@ -1,6 +1,6 @@
 //
-//  LACatregoryStyle.swift
-//  LACategoryView
+//  MJLCatregoryStyle.swift
+//  MJLCategoryView
 //
 //  Created by Mujui Lin on 04/07/2018.
 //
