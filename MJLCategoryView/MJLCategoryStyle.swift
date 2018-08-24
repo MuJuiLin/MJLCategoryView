@@ -21,7 +21,7 @@ public struct MJLCategoryStyle {
     
     public var selectedTitleColor: UIColor = UIColor.orange
     
-    public var HintBarColor: UIColor = UIColor.orange
+    public var hintBarColor: UIColor = UIColor.orange
     
     public var titleFont: UIFont = UIFont.systemFont(ofSize: 16.0)
     
