@@ -113,7 +113,7 @@ extension MJLCategoryView {
         let button = categoryButtons[defaultSelectedButtonIndex]
         
         categoryHintBar.frame = CGRect(x: button.frame.minX, y: button.frame.height - 2, width: button.frame.width, height: 2)
-        categoryHintBar.backgroundColor = categoryStyle.HintBarColor
+        categoryHintBar.backgroundColor = categoryStyle.hintBarColor
         
         moveCategoryHintBarWith(button)
         categoryScrollView.addSubview(categoryHintBar)
